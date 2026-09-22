@@ -1,0 +1,644 @@
+{
+  "rows_raw": 3271,
+  "cols_raw": 22,
+  "missing_cells": 0,
+  "dup_rows": 0,
+  "has_location": false,
+  "date_fmt_us_fail": 0,
+  "date_fmt_eu_fail": 1974,
+  "date_min": "2008-02-01",
+  "date_max": "2017-06-25",
+  "span_days": 3433,
+  "observed_days": 3271,
+  "missing_days": 162,
+  "missing_days_pct": 4.7,
+  "longest_gaps": [
+    {
+      "start": "2012-12-01",
+      "days": 31
+    },
+    {
+      "start": "2011-04-01",
+      "days": 30
+    },
+    {
+      "start": "2013-02-01",
+      "days": 28
+    },
+    {
+      "start": "2010-10-05",
+      "days": 9
+    }
+  ],
+  "wind_placeholder": {
+    "direction": "W",
+    "speed": 41.0,
+    "rows": 1027,
+    "pct": 31.4,
+    "next_pair_rows": 32,
+    "ratio_to_next": 32.0,
+    "by_year": {
+      "2008": 100.0,
+      "2009": 100.0,
+      "2010": 79.6,
+      "2011": 2.7,
+      "2012": 2.5,
+      "2013": 4.7,
+      "2014": 1.1,
+      "2015": 3.6,
+      "2016": 5.0,
+      "2017": 0.6
+    },
+    "years_fully_affected": [
+      2008,
+      2009
+    ]
+  },
+  "wind_reliable_from": 2011,
+  "validation": {
+    "maxtemp_below_mintemp": 0,
+    "humidity_out_of_range": 0,
+    "cloud_out_of_range": 1,
+    "pressure_implausible": 0,
+    "rainfall_negative": 0,
+    "windspeed_negative": 0,
+    "raintoday_mismatch": 0
+  },
+  "cloud_flagged": 1,
+  "warmest_month": "Jan",
+  "coolest_month": "Jul",
+  "coverage_by_year": {
+    "2008": 333,
+    "2009": 359,
+    "2010": 334,
+    "2011": 333,
+    "2012": 320,
+    "2013": 337,
+    "2014": 357,
+    "2015": 362,
+    "2016": 361,
+    "2017": 175
+  },
+  "complete_years": [
+    2008,
+    2009,
+    2010,
+    2011,
+    2013,
+    2014,
+    2015,
+    2016
+  ],
+  "rows_clean": 3271,
+  "cols_clean": 35,
+  "kpi": {
+    "avg_temp": 18.94,
+    "max_temp": 45.8,
+    "min_temp": 4.3,
+    "avg_humidity": 61.47,
+    "avg_wind": 17.19,
+    "max_gust": 96.0,
+    "avg_gust_reliable": null,
+    "total_rain": 10932.2,
+    "rainy_days": 849,
+    "rainy_pct": 26.0,
+    "avg_pressure": 1017.2,
+    "avg_sunshine": 7.17,
+    "observations": 3271
+  },
+  "monthly": [
+    {
+      "month": "Jan",
+      "days": 277,
+      "rain_total": 872.6,
+      "rainy": 62,
+      "temp": 23.89,
+      "tmax": 27.48,
+      "tmin": 20.3,
+      "humidity": 63.05,
+      "wind": 16.9,
+      "sunshine": 7.59,
+      "rain_per_day": 3.15,
+      "rainy_pct": 22.38
+    },
+    {
+      "month": "Feb",
+      "days": 255,
+      "rain_total": 1102.6,
+      "rainy": 85,
+      "temp": 23.53,
+      "tmax": 26.88,
+      "tmin": 20.19,
+      "humidity": 66.65,
+      "wind": 16.76,
+      "sunshine": 6.91,
+      "rain_per_day": 4.32,
+      "rainy_pct": 33.33
+    },
+    {
+      "month": "Mar",
+      "days": 310,
+      "rain_total": 1390.0,
+      "rainy": 91,
+      "temp": 22.37,
+      "tmax": 25.88,
+      "tmin": 18.86,
+      "humidity": 66.62,
+      "wind": 16.61,
+      "sunshine": 6.8,
+      "rain_per_day": 4.48,
+      "rainy_pct": 29.35
+    },
+    {
+      "month": "Apr",
+      "days": 265,
+      "rain_total": 1395.2,
+      "rainy": 91,
+      "temp": 19.43,
+      "tmax": 23.49,
+      "tmin": 15.36,
+      "humidity": 65.09,
+      "wind": 16.58,
+      "sunshine": 6.81,
+      "rain_per_day": 5.26,
+      "rainy_pct": 34.34
+    },
+    {
+      "month": "May",
+      "days": 310,
+      "rain_total": 754.6,
+      "rainy": 61,
+      "temp": 16.63,
+      "tmax": 21.15,
+      "tmin": 12.11,
+      "humidity": 61.6,
+      "wind": 16.83,
+      "sunshine": 6.96,
+      "rain_per_day": 2.43,
+      "rainy_pct": 19.68
+    },
+    {
+      "month": "Jun",
+      "days": 290,
+      "rain_total": 1711.2,
+      "rainy": 102,
+      "temp": 14.46,
+      "tmax": 18.38,
+      "tmin": 10.54,
+      "humidity": 66.61,
+      "wind": 16.48,
+      "sunshine": 5.36,
+      "rain_per_day": 5.9,
+      "rainy_pct": 35.17
+    },
+    {
+      "month": "Jul",
+      "days": 276,
+      "rain_total": 791.4,
+      "rainy": 69,
+      "temp": 13.5,
+      "tmax": 18.01,
+      "tmin": 8.99,
+      "humidity": 60.35,
+      "wind": 17.16,
+      "sunshine": 6.71,
+      "rain_per_day": 2.87,
+      "rainy_pct": 25.0
+    },
+    {
+      "month": "Aug",
+      "days": 269,
+      "rain_total": 531.8,
+      "rainy": 48,
+      "temp": 14.57,
+      "tmax": 19.38,
+      "tmin": 9.75,
+      "humidity": 54.04,
+      "wind": 17.73,
+      "sunshine": 7.87,
+      "rain_per_day": 1.98,
+      "rainy_pct": 17.84
+    },
+    {
+      "month": "Sep",
+      "days": 260,
+      "rain_total": 450.8,
+      "rainy": 48,
+      "temp": 17.3,
+      "tmax": 21.99,
+      "tmin": 12.61,
+      "humidity": 53.31,
+      "wind": 18.23,
+      "sunshine": 8.2,
+      "rain_per_day": 1.73,
+      "rainy_pct": 18.46
+    },
+    {
+      "month": "Oct",
+      "days": 262,
+      "rain_total": 577.8,
+      "rainy": 60,
+      "temp": 19.16,
+      "tmax": 23.55,
+      "tmin": 14.77,
+      "humidity": 55.92,
+      "wind": 17.92,
+      "sunshine": 7.97,
+      "rain_per_day": 2.21,
+      "rainy_pct": 22.9
+    },
+    {
+      "month": "Nov",
+      "days": 257,
+      "rain_total": 774.6,
+      "rainy": 74,
+      "temp": 21.07,
+      "tmax": 24.83,
+      "tmin": 17.32,
+      "humidity": 61.36,
+      "wind": 17.48,
+      "sunshine": 7.39,
+      "rain_per_day": 3.01,
+      "rainy_pct": 28.79
+    },
+    {
+      "month": "Dec",
+      "days": 240,
+      "rain_total": 579.6,
+      "rainy": 58,
+      "temp": 22.21,
+      "tmax": 25.83,
+      "tmin": 18.58,
+      "humidity": 61.76,
+      "wind": 17.86,
+      "sunshine": 7.81,
+      "rain_per_day": 2.42,
+      "rainy_pct": 24.17
+    }
+  ],
+  "coverage_spread_pct": 29.0,
+  "wettest_total": "Jun",
+  "wettest_per_day": "Jun",
+  "driest_total": "Sep",
+  "driest_per_day": "Sep",
+  "rain_per_day_max": 5.9,
+  "rain_per_day_min": 1.73,
+  "rank_agrees": true,
+  "seasonal": [
+    {
+      "Season": "Summer",
+      "days": 772,
+      "temp": 23.25,
+      "rain_total": 2554.8,
+      "humidity": 63.84,
+      "wind": 17.15,
+      "rain_per_day": 3.31
+    },
+    {
+      "Season": "Autumn",
+      "days": 885,
+      "temp": 19.48,
+      "rain_total": 3539.8,
+      "humidity": 64.4,
+      "wind": 16.68,
+      "rain_per_day": 4.0
+    },
+    {
+      "Season": "Winter",
+      "days": 835,
+      "temp": 14.18,
+      "rain_total": 3034.4,
+      "humidity": 60.49,
+      "wind": 17.11,
+      "rain_per_day": 3.63
+    },
+    {
+      "Season": "Spring",
+      "days": 779,
+      "temp": 19.17,
+      "rain_total": 1803.2,
+      "humidity": 56.84,
+      "wind": 17.88,
+      "rain_per_day": 2.31
+    }
+  ],
+  "warmest_season": "Summer",
+  "wettest_season": "Autumn",
+  "humidity_peak_month": "Feb",
+  "humidity_low_month": "Sep",
+  "humidity_peak_season": "Summer",
+  "wind_reliable_days": 2244,
+  "dominant_wind": "W",
+  "dominant_wind_pct": 17.7,
+  "dominant_wind_naive_pct": 43.6,
+  "wind_second": "SSE",
+  "wind_second_pct": 10.7,
+  "wind_dir_counts": {
+    "W": 398,
+    "SSE": 239,
+    "ENE": 214,
+    "NE": 169,
+    "S": 169,
+    "SSW": 163,
+    "NNE": 149,
+    "ESE": 140,
+    "WSW": 134,
+    "E": 122,
+    "WNW": 79,
+    "NW": 68,
+    "SE": 68,
+    "NNW": 52,
+    "SW": 50,
+    "N": 30
+  },
+  "wind_se_pct": 3.0,
+  "trend": {
+    "slope_c_per_year": 0.1508,
+    "p_value": 0.0198,
+    "r_squared": 0.623,
+    "n_years": 8,
+    "decade_c": 1.51,
+    "significant": true
+  },
+  "annual_means": [
+    {
+      "Year": 2008,
+      "temp": 17.72,
+      "tmax": 21.74,
+      "tmin": 13.71,
+      "rain": 3.06,
+      "humidity": 63.36,
+      "days": 333
+    },
+    {
+      "Year": 2009,
+      "temp": 18.97,
+      "tmax": 22.87,
+      "tmin": 15.06,
+      "rain": 2.66,
+      "humidity": 61.46,
+      "days": 359
+    },
+    {
+      "Year": 2010,
+      "temp": 18.85,
+      "tmax": 22.63,
+      "tmin": 15.06,
+      "rain": 3.29,
+      "humidity": 64.54,
+      "days": 334
+    },
+    {
+      "Year": 2011,
+      "temp": 18.62,
+      "tmax": 22.51,
+      "tmin": 14.73,
+      "rain": 3.49,
+      "humidity": 63.54,
+      "days": 333
+    },
+    {
+      "Year": 2013,
+      "temp": 19.08,
+      "tmax": 23.5,
+      "tmin": 14.65,
+      "rain": 3.5,
+      "humidity": 58.28,
+      "days": 337
+    },
+    {
+      "Year": 2014,
+      "temp": 19.24,
+      "tmax": 23.4,
+      "tmin": 15.08,
+      "rain": 2.48,
+      "humidity": 60.56,
+      "days": 357
+    },
+    {
+      "Year": 2015,
+      "temp": 19.0,
+      "tmax": 23.1,
+      "tmin": 14.91,
+      "rain": 3.7,
+      "humidity": 62.42,
+      "days": 362
+    },
+    {
+      "Year": 2016,
+      "temp": 19.65,
+      "tmax": 23.85,
+      "tmin": 15.45,
+      "rain": 3.67,
+      "humidity": 57.59,
+      "days": 361
+    }
+  ],
+  "extremes": {
+    "hottest": [
+      "2013-01-18",
+      45.8
+    ],
+    "coldest": [
+      "2010-06-30",
+      4.3
+    ],
+    "wettest": [
+      "2015-04-21",
+      119.4
+    ],
+    "windiest": [
+      "2014-06-28",
+      96.0
+    ],
+    "most_humid": [
+      "2011-10-20",
+      100.0
+    ]
+  },
+  "corr": {
+    "labels": [
+      "AvgTemp",
+      "MaxTemp",
+      "MinTemp",
+      "Rainfall",
+      "Humidity",
+      "WindSpeed",
+      "Pressure",
+      "Sunshine",
+      "Cloud",
+      "Evaporation"
+    ],
+    "matrix": [
+      [
+        1.0,
+        0.94,
+        0.94,
+        -0.07,
+        0.0,
+        -0.08,
+        -0.42,
+        0.14,
+        0.07,
+        0.57
+      ],
+      [
+        0.94,
+        1.0,
+        0.77,
+        -0.14,
+        -0.18,
+        -0.12,
+        -0.41,
+        0.33,
+        -0.1,
+        0.51
+      ],
+      [
+        0.94,
+        0.77,
+        1.0,
+        0.01,
+        0.18,
+        -0.04,
+        -0.38,
+        -0.06,
+        0.23,
+        0.57
+      ],
+      [
+        -0.07,
+        -0.14,
+        0.01,
+        1.0,
+        0.35,
+        0.12,
+        -0.02,
+        -0.31,
+        0.25,
+        -0.11
+      ],
+      [
+        0.0,
+        -0.18,
+        0.18,
+        0.35,
+        1.0,
+        -0.27,
+        0.23,
+        -0.59,
+        0.52,
+        -0.27
+      ],
+      [
+        -0.08,
+        -0.12,
+        -0.04,
+        0.12,
+        -0.27,
+        1.0,
+        -0.17,
+        0.08,
+        -0.08,
+        0.15
+      ],
+      [
+        -0.42,
+        -0.41,
+        -0.38,
+        -0.02,
+        0.23,
+        -0.17,
+        1.0,
+        -0.07,
+        -0.01,
+        -0.32
+      ],
+      [
+        0.14,
+        0.33,
+        -0.06,
+        -0.31,
+        -0.59,
+        0.08,
+        -0.07,
+        1.0,
+        -0.75,
+        0.18
+      ],
+      [
+        0.07,
+        -0.1,
+        0.23,
+        0.25,
+        0.52,
+        -0.08,
+        -0.01,
+        -0.75,
+        1.0,
+        -0.04
+      ],
+      [
+        0.57,
+        0.51,
+        0.57,
+        -0.11,
+        -0.27,
+        0.15,
+        -0.32,
+        0.18,
+        -0.04,
+        1.0
+      ]
+    ]
+  },
+  "top_correlations": [
+    {
+      "a": "AvgTemp",
+      "b": "MaxTemp",
+      "r": 0.94
+    },
+    {
+      "a": "AvgTemp",
+      "b": "MinTemp",
+      "r": 0.94
+    },
+    {
+      "a": "MaxTemp",
+      "b": "MinTemp",
+      "r": 0.77
+    },
+    {
+      "a": "Sunshine",
+      "b": "Cloud",
+      "r": -0.75
+    },
+    {
+      "a": "Humidity",
+      "b": "Sunshine",
+      "r": -0.59
+    },
+    {
+      "a": "AvgTemp",
+      "b": "Evaporation",
+      "r": 0.57
+    }
+  ],
+  "dashboard_check": {
+    "kpis": {
+      "Avg Temperature 18.94": true,
+      "Max Temperature 45.80": true,
+      "Avg Humidity 61.47": true,
+      "Avg Wind Speed 17.19": true,
+      "Total Rainfall 10.93K": true,
+      "Rainy Days 1K": false
+    },
+    "claims": {
+      "Summer is the warmest season": true,
+      "February recorded the highest rainfall": false,
+      "Humidity peaks during winter months": false,
+      "Dominant wind direction is SE": false,
+      "Temperature shows a slight increase": "True"
+    }
+  }
+}
