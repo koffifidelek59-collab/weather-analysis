@@ -1,103 +1,399 @@
-# Weather and Climate Pattern Analysis
+# 🌦️ Weather and Climate Pattern Analysis
 
-**KOUAME Koffi Fidèle** · Data Analysis Internship · koffifidelek59@gmail.com
+**KOUAME Koffi Fidèle**
+*Data Analysis Internship | Energy Systems & Data Analytics*
+📧 `koffifidelek59@gmail.com`
 
-3,271 daily observations, February 2008 to June 2017
+> **A reproducible end-to-end weather data analysis project combining data quality assessment, statistical analysis, visualization, and an interactive Power BI dashboard.**
 
 ---
 
-## Deliverables
+## 📊 Project Overview
 
-| Required | Delivered | File |
-| :--- | :--- | :--- |
-| Cleaned data | 3,271 rows, no row deleted | `data/weather_clean.csv` |
-| Exploratory analysis | Executed notebook, 10 cells, 6 figures | `Weather_Analysis.ipynb` |
-| Visualisations | Six analysis figures | `figures/` |
-| Interactive dashboard | Power BI page, cross-filtered, with theme | `Weather_Dashboard.pbix`, `WeatherDashboard.json` |
-| Insights | Six insights with recommendations | `INSIGHTS.md`, `Weather_Climate_Report.pdf` |
+This project analyses a **single-station daily weather record containing 3,271 observations from February 2008 to June 2017**.
 
-## Three findings a completeness audit cannot reach
+The objective is to move beyond basic data cleaning and investigate whether the dataset is sufficiently reliable to support conclusions about:
 
-The file has **zero missing cells, zero duplicate rows**, and passes every internal
-consistency rule. A routine audit would declare it clean.
+* 🌡️ Temperature variability and long-term trends
+* 🌧️ Rainfall patterns
+* 💧 Humidity behaviour
+* 💨 Wind direction and speed
+* 📅 Seasonal and monthly variability
+* 📈 Relationships between meteorological variables
+* 🔎 Data-quality and reliability issues
 
-**1. Nearly a third of the wind record is a placeholder.** The pair *west, 41 km/h*
-occurs on **1,027 days**, 31.4% of the file and 32 times the next most frequent
-direction-and-speed combination. It covers **every single day of 2008 and 2009** and
-80% of 2010.
+The project follows a complete data-analysis workflow:
 
-West is a legal direction, 41 km/h is inside the observed range of 17 to 96, and the
-cells are populated. No completeness check and no validity rule sees it. Only the
-improbable repetition of the exact pair gives it away.
+**Data Validation → Data Quality Assessment → Exploratory Analysis → Statistical Testing → Visualization → Power BI Dashboard → Insights**
 
-On the full file the prevailing wind appears westerly on 43.6% of days. On the
-2,244 reliable days it is westerly on **17.7%**.
+---
 
-**2. The record is not the calendar.** 162 days in the span carry no row at all. A
-missing row leaves no trace in a missing-value count, because there is no cell to be
-empty. Whole months are absent, and the observed-day count per calendar month ranges
-from 240 to 310, a **29% spread**.
+## 🎯 Key Results
 
-**3. The file cannot answer the spatial question.** The brief asks for patterns across
-cities and countries. There is no city, country or station column. This is a
-single-station record, and no spatial comparison is attempted.
+Although the dataset contains **0 missing cells and 0 duplicate rows**, deeper analysis identified three important issues that a conventional completeness check would not detect.
 
-## Dashboard: items identified for the next revision
+### 1. 💨 Repetitive Wind Pattern
 
-The six indicator cards were verified against the data and are **correct**. Four
-statements in the insight panel were written before this analysis was complete.
+The combination **West + 41 km/h** appears on **1,027 days**, representing **31.4% of the dataset**.
 
-| Item | Correction |
-| :--- | :--- |
-| Rainy Days shows 1K | The count is 849; the thousands unit rounds up by 18%. Set the display unit to None |
-| February recorded the highest rainfall | June, on both rankings. The Rainfall panel already shows June |
-| Humidity peaks during winter months | Peaks in February, which is summer under the southern-hemisphere convention |
-| Dominant wind direction: SE | West at 17.7% on the reliable days; SE is 4.5% |
+The pattern is particularly unusual because it occurs:
 
-Adding the reliability flag and the season field to the Power BI model resolves three
-of the four together.
+* On every recorded day in **2008 and 2009**
+* On approximately **80% of observations in 2010**
+* At a frequency **32 times higher** than the next most common direction-speed combination
 
-## Method
+After applying the reliability assessment, the proportion of westerly winds decreases from **43.6% of the complete record to 17.7% of the reliable observations**.
 
-Nothing was modified before the problem was measured. The date format was **tested**
-rather than assumed: read as `d/m/Y` the column leaves 60% of rows unparsed. The
-hemisphere was **established from the data** before seasons were assigned: the warmest
-month is January, so December to February is summer, and the northern convention would
-invert every seasonal conclusion.
+This demonstrates why **data reliability cannot be evaluated using missing-value checks alone**.
 
-Every monthly figure is reported **twice**, as a raw total and per observed day,
-because the months are not equally covered. June is the wettest month on both
-rankings, so the conclusion stands; the agreement was established rather than assumed.
+---
 
-The temperature trend is **tested, not asserted**: +1.51 °C per decade, p = 0.020,
-r² = 0.62, on the eight complete years. 2012 and 2017 are excluded for insufficient
-coverage.
+### 2. 📅 Missing Calendar Days
 
-## Running it
+The dataset contains no missing cells, but **162 calendar days have no observation at all**.
 
-Open `Weather_Analysis.ipynb` with the Colab badge at the top and run every cell.
-Upload `Weather_Data.csv` when the picker appears.
+This distinction is important:
+
+> A missing row cannot appear as a missing cell because the row itself does not exist.
+
+Monthly observation coverage is therefore unequal, ranging from approximately **240 to 310 observed days**.
+
+To avoid misleading comparisons, monthly rainfall and other aggregates are evaluated using both:
+
+* **Raw totals**
+* **Values normalised by the number of observed days**
+
+---
+
+### 3. 🌍 No Spatial Information
+
+The original analysis brief refers to comparisons across cities and countries.
+
+However, the dataset does not contain:
+
+* City
+* Country
+* Station ID
+* Latitude
+* Longitude
+
+Therefore, this project intentionally treats the dataset as a **single-station temporal record**.
+
+No unsupported spatial comparison is introduced.
+
+---
+
+## 📈 Statistical Findings
+
+### 🌡️ Temperature Trend
+
+A statistical trend analysis was performed using the **eight complete years** in the record.
+
+Years with insufficient coverage were excluded.
+
+| Metric          |                Result |
+| --------------- | --------------------: |
+| Estimated trend | **+1.51 °C / decade** |
+| p-value         |             **0.020** |
+| R²              |              **0.62** |
+
+The results indicate a positive temperature trend within the analysed station record.
+
+This result should be interpreted specifically as a trend in the available dataset and not as a direct estimate of regional or global climate change.
+
+---
+
+### 🌧️ Rainfall
+
+Rainfall was evaluated using both absolute totals and rainfall normalised by observed-day coverage.
+
+**June is the wettest month under both approaches.**
+
+This agreement is important because the dataset contains unequal temporal coverage.
+
+The analysis also identifies:
+
+**849 rainy days**
+
+The Power BI dashboard should therefore display the value as **849**, rather than using a rounded `1K` display unit.
+
+---
+
+### 💨 Wind
+
+After accounting for the identified reliability issue:
+
+| Wind direction |     Share |
+| -------------- | --------: |
+| **West**       | **17.7%** |
+| Southeast      |  **4.5%** |
+
+The original dashboard statement identifying **SE as the dominant wind direction** was therefore corrected.
+
+---
+
+### 💧 Humidity
+
+The highest humidity values occur in **February**.
+
+Seasonal interpretation was based on the dataset itself: January is the warmest month, supporting the use of the **Southern Hemisphere seasonal convention**.
+
+---
+
+## 🧪 Data Quality Methodology
+
+The project does not modify the data before measuring the problem.
+
+The workflow is:
+
+```text
+Raw Dataset
+     ↓
+Data Inspection
+     ↓
+Date Validation
+     ↓
+Missing & Duplicate Checks
+     ↓
+Calendar Coverage Analysis
+     ↓
+Range & Consistency Checks
+     ↓
+Reliability / Anomaly Detection
+     ↓
+Exploratory Data Analysis
+     ↓
+Monthly & Seasonal Analysis
+     ↓
+Statistical Trend Analysis
+     ↓
+Power BI Dashboard
+     ↓
+Insights & Recommendations
+```
+
+### Date Validation
+
+The date format was tested rather than assumed.
+
+An incorrect `d/m/Y` interpretation leaves approximately **60% of the observations unparsed**, confirming that the date format must be validated before analysis.
+
+### Seasonal Classification
+
+The warmest month is **January**, so the seasonal classification used in the analysis is:
+
+| Season    | Months               |
+| --------- | -------------------- |
+| ☀️ Summer | December – February  |
+| 🍂 Autumn | March – May          |
+| ❄️ Winter | June – August        |
+| 🌱 Spring | September – November |
+
+---
+
+## 📊 Power BI Dashboard
+
+The project includes an interactive **Power BI dashboard** with:
+
+* KPI cards
+* Temperature analysis
+* Rainfall analysis
+* Humidity indicators
+* Wind analysis
+* Seasonal comparisons
+* Interactive filtering
+* Custom visual theme
+* Reliability-aware analysis
+
+### Dashboard Quality Review
+
+Four dashboard statements were reviewed after completing the analytical workflow:
+
+| Original item                    | Corrected result |
+| -------------------------------- | ---------------- |
+| Rainy Days: `1K`                 | **849**          |
+| Highest rainfall month: February | **June**         |
+| Humidity peaks: winter           | **February**     |
+| Dominant wind: SE                | **West**         |
+
+---
+
+## 📊 Visualizations
+
+The project produces dedicated visualizations covering:
+
+* Calendar coverage
+* Temperature cycle
+* Rainfall patterns
+* Wind distribution
+* Long-term temperature trend
+* Variable relationships
+* Power BI dashboard
+
+---
+
+## 🛠️ Technologies
+
+| Category              | Tools                   |
+| --------------------- | ----------------------- |
+| Programming           | **Python**              |
+| Data manipulation     | **Pandas, NumPy**       |
+| Visualization         | **Matplotlib, Seaborn** |
+| Statistics            | **SciPy**               |
+| Notebook              | **Jupyter Notebook**    |
+| Business Intelligence | **Power BI**            |
+| Reporting             | **LaTeX**               |
+| Version Control       | **Git / GitHub**        |
+
+---
+
+## 📁 Project Structure
+
+```text
+Weather_Analysis/
+│
+├── 📓 Weather_Analysis.ipynb
+├── 📄 Weather_Climate_Report.pdf
+├── 📄 INSIGHTS.md
+├── 📄 DASHBOARD_FIXES.md
+├── 🐍 analysis.py
+├── 📄 report.tex
+├── 📊 Weather_Dashboard.pbix
+├── 🎨 WeatherDashboard.json
+│
+├── data/
+│   ├── Weather_Data_original.csv
+│   ├── weather_clean.csv
+│   └── weather_clean_extended.csv
+│
+├── figures/
+│   ├── 01_coverage.png
+│   ├── 02_temperature_cycle.png
+│   ├── 03_rainfall.png
+│   ├── 04_wind_rose.png
+│   ├── 05_trend.png
+│   ├── 06_relationships.png
+│   └── 07_powerbi_dashboard.png
+│
+└── results/
+    ├── annual_means.csv
+    ├── correlation.csv
+    ├── findings.json
+    ├── monthly_profile.csv
+    └── seasonal_profile.csv
+```
+
+---
+
+## 🚀 How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd Weather_Analysis
+```
+
+### 2. Install dependencies
 
 ```bash
 pip install pandas numpy matplotlib scipy
+```
+
+### 3. Run the analysis
+
+```bash
 python analysis.py
 ```
 
-## Contents
+### 4. Open the notebook
 
+Launch:
+
+```text
+Weather_Analysis.ipynb
 ```
-Weather_Analysis/
-├── Weather_Analysis.ipynb          Executed notebook, 10 cells, 6 figures
-├── Weather_Climate_Report.pdf      Formal report, 11 pages
-├── INSIGHTS.md                     Six insights with recommendations
-├── analysis.py                     The analysis as a script
-├── report.tex                      LaTeX source
-├── Weather_Dashboard.pbix          Power BI dashboard
-├── WeatherDashboard.json           Power BI theme
-├── data/
-│   ├── Weather_Data_original.csv   The file as supplied
-│   ├── weather_clean.csv           Cleaned, 3,271 rows x 35 columns
-│   └── weather_clean_extended.csv  Extended cleaning, 48 columns with anomaly flags
-├── figures/                        Six analysis figures plus the dashboard capture
-└── results/                        Aggregate tables and findings.json
-```
+
+The notebook can also be executed using **Google Colab**.
+
+---
+
+## 📦 Deliverables
+
+| Deliverable             | Status |
+| ----------------------- | :----: |
+| Cleaned dataset         |    ✅   |
+| Data quality assessment |    ✅   |
+| Exploratory analysis    |    ✅   |
+| Statistical analysis    |    ✅   |
+| Visualization suite     |    ✅   |
+| Power BI dashboard      |    ✅   |
+| Dashboard validation    |    ✅   |
+| Analytical insights     |    ✅   |
+| PDF report              |    ✅   |
+| Reproducible notebook   |    ✅   |
+
+---
+
+## 💡 Main Analytical Lessons
+
+This project highlights several important principles of professional data analysis:
+
+> **A dataset can contain zero missing cells and still contain serious data-quality problems.**
+
+> **Missing observations and missing values are not the same thing.**
+
+> **Aggregated statistics should account for unequal temporal coverage.**
+
+> **Statistical trends should be tested rather than inferred solely from visualizations.**
+
+> **A dashboard should communicate validated results, not assumptions.**
+
+---
+
+## 🔎 Limitations
+
+The analysis should be interpreted within the limitations of the available dataset:
+
+* Single-station record
+* No geographical metadata
+* 162 missing calendar days
+* Unequal monthly coverage
+* Repetitive wind observations
+* Incomplete coverage for some years
+
+These limitations do not invalidate the analysis; instead, they define the scope within which the results can reasonably be interpreted.
+
+---
+
+## 🔮 Future Improvements
+
+Future versions could integrate:
+
+* 🌍 Multi-station and multi-country datasets
+* 🛰️ Satellite and reanalysis data
+* 🌞 Solar radiation and GHI
+* 💨 More complete wind observations
+* 🌧️ Extreme rainfall analysis
+* 🤖 Machine learning for weather forecasting
+* 📊 Automated Power BI data refresh
+* ⚡ Integration with energy-system analysis
+* 💧 Applications to renewable energy and green hydrogen production
+
+---
+
+## 👤 Author
+
+### **KOUAME Koffi Fidèle**
+
+**Energy Systems Analyst | AI for Power Systems & Green Hydrogen | Machine Learning**
+
+Interested in the intersection of:
+
+**Data Analytics · Energy Systems · Renewable Energy · Green Hydrogen · Machine Learning**
+
+📧 `koffifidelek59@gmail.com`
+
+---
+
+⭐ **If you find this project useful, feel free to explore the repository and its analytical workflow.**
