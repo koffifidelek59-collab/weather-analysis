@@ -1,0 +1,23 @@
+{
+  "name": "Weather Analytics Dark",
+  "dataColors": ["#E67E22", "#D35400", "#1E8449", "#8E44AD", "#3498DB", "#17A589", "#3B82F6", "#27AE60"],
+  "background": "#0B1929",
+  "foreground": "#FFFFFF",
+  "tableAccent": "#3498DB",
+  "good": "#27AE60",
+  "bad": "#E74C3C",
+  "neutral": "#8B99AE",
+  "maximum": "#E67E22",
+  "center": "#3498DB",
+  "minimum": "#1E2A3E",
+  "null": "#8B99AE",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#0F1C30" } }, "transparency": 0 }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#1E2A3E" } } }],
+        "outspace": [{ "color": { "solid": { "color": "#0B1929" } } }]
+      }
+    }
+  }
+}
